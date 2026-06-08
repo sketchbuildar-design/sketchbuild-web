@@ -228,6 +228,52 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0 48px}
 .tab.active{color:var(--white);border-bottom-color:var(--blue)}
 .modal-note{margin-top:16px;font-size:10px;color:var(--gray);line-height:1.8;border-left:2px solid var(--blue);padding-left:14px}
 
+
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;bottom:32px;right:32px;z-index:150;display:flex;align-items:center;gap:10px;text-decoration:none}
+.wa-float-btn{width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform .2s,box-shadow .2s}
+.wa-float-btn:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,0.55)}
+.wa-float-btn svg{width:28px;height:28px;fill:#fff}
+.wa-float-label{background:#25d366;color:#fff;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1px;padding:8px 14px;border-radius:20px;white-space:nowrap;opacity:0;transform:translateX(10px);transition:all .3s;pointer-events:none}
+.wa-float:hover .wa-float-label{opacity:1;transform:translateX(0)}
+
+/* TERMINACIONES */
+.term-section{background:var(--black)}
+.term-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:0}
+.term-card{background:var(--card);padding:44px 36px;position:relative;overflow:hidden}
+.term-card.superior{background:#0f1218}
+.term-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.term-card.standard::before{background:var(--gray)}
+.term-card.superior::before{background:var(--blue)}
+.term-badge{display:inline-block;font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;margin-bottom:24px;border:1px solid}
+.term-card.standard .term-badge{color:var(--gray-light);border-color:var(--gray)}
+.term-card.superior .term-badge{color:var(--blue);border-color:var(--blue)}
+.term-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;margin-bottom:8px}
+.term-subtitle{font-size:10px;letter-spacing:2px;color:var(--gray);text-transform:uppercase;margin-bottom:28px}
+.term-items{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--border)}
+.term-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--border)}
+.term-item-icon{color:var(--blue);font-size:14px;margin-top:1px;flex-shrink:0}
+.term-card.standard .term-item-icon{color:var(--gray-light)}
+.term-item-text{font-size:11px;line-height:1.7;color:var(--gray)}
+.term-item-text strong{color:var(--white);font-weight:400}
+.term-cta{margin-top:28px}
+
+/* ETAPAS */
+.etapas-section{background:var(--dark)}
+.etapas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.etapa-card{background:var(--card);padding:36px 28px;position:relative}
+.etapa-card:hover{background:#1a1a1a}
+.etapa-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:rgba(58,90,240,0.12);line-height:1;display:block;margin-bottom:14px}
+.etapa-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:12px;color:var(--white)}
+.etapa-desc{font-size:11px;line-height:1.8;color:var(--gray)}
+.etapa-tag{display:inline-block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);border:1px solid rgba(58,90,240,0.3);padding:3px 8px;margin-top:14px}
+
+@media(max-width:900px){
+  .term-grid{grid-template-columns:1fr}
+  .etapas-grid{grid-template-columns:1fr}
+  .wa-float-label{display:none}
+}
+
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:none}
@@ -262,6 +308,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0 48px}
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#terminaciones">Terminaciones</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -276,7 +323,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0 48px}
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-content reveal">
-    <div class="hero-tag">Córdoba · Buenos Aires, Argentina</div>
+    <div class="hero-tag">Buenos Aires · Córdoba, Argentina</div>
     <h1 class="hero-title">Sketch<span>Build</span></h1>
     <div class="hero-line"></div>
     <div class="hero-sub">Arquitectura · Diseño · Construcción</div>
@@ -303,14 +350,14 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0 48px}
     <span class="ticker-item">Arquitectura</span>
     <span class="ticker-item">Diseño de Interiores</span>
     <span class="ticker-item">Construcción</span>
-    <span class="ticker-item">Córdoba &amp; CABA</span>
+    <span class="ticker-item">CABA &amp; Córdoba</span>
     <span class="ticker-item">Presupuesto sin cargo</span>
     <span class="ticker-item">Transparencia Total</span>
     <span class="ticker-item">Plazos Cumplidos</span>
     <span class="ticker-item">Arquitectura</span>
     <span class="ticker-item">Diseño de Interiores</span>
     <span class="ticker-item">Construcción</span>
-    <span class="ticker-item">Córdoba &amp; CABA</span>
+    <span class="ticker-item">CABA &amp; Córdoba</span>
     <span class="ticker-item">Presupuesto sin cargo</span>
     <span class="ticker-item">Transparencia Total</span>
     <span class="ticker-item">Plazos Cumplidos</span>
@@ -473,6 +520,104 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0 48px}
   </div>
 </section>
 
+
+<!-- TERMINACIONES -->
+<section class="term-section" id="terminaciones">
+  <div class="reveal">
+    <div class="section-tag">Qué incluye</div>
+    <div class="section-title">Terminaciones</div>
+    <div class="section-line"></div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:19px;color:#888;max-width:620px;line-height:1.8;margin-bottom:48px">Cada proyecto viene con especificaciones claras desde el primer día. Elegís el nivel de terminación y sabés exactamente qué materiales y marcas incluye.</p>
+  </div>
+  <div class="term-grid reveal">
+    <!-- STANDARD -->
+    <div class="term-card standard">
+      <span class="term-badge">Standard</span>
+      <div class="term-title">Terminación Standard</div>
+      <div class="term-subtitle">Calidad probada · Marcas reconocidas</div>
+      <div class="term-items">
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Sanitarios</strong> — Roca Monaco. Inodoro largo, bidet lluvia, lavatorio y columna. Descarga dual 6/3L.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Grifería</strong> — FV Arizona monocomando, cierre cerámico, apto calefón. Kit baño completo + cocina en cromo.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Pisos</strong> — Cerámico 45×45 y porcelanato pulido 60×60 de primera calidad a elección.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Carpinterías</strong> — Ventanas Aluar Modena, vidrio simple, corrediza. DVH en orientación sur.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Revestimiento exterior</strong> — Tarquini Raya 2, textura a elección, amplia paleta de colores.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Mobiliario</strong> — Bajo mesada y placares en melamina MDF 18mm, cierre suave, amplia paleta.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Semi cubierto</strong> — Estructura de hierro + carpeta de contrapiso de alto tránsito.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Rejas</strong> — Incluidas. Cantidad y ubicación a definir en anteproyecto.</span></div>
+      </div>
+      <div class="term-cta">
+        <a href="https://wa.me/message/VIRHE5HNAFOGK1" target="_blank" class="btn-outline" style="display:inline-block;text-decoration:none">Cotizar Standard</a>
+      </div>
+    </div>
+    <!-- SUPERIOR -->
+    <div class="term-card superior">
+      <span class="term-badge">Superior</span>
+      <div class="term-title">Terminación Superior</div>
+      <div class="term-subtitle">Diseño premium · Materiales de elite</div>
+      <div class="term-items">
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Sanitarios</strong> — Ferrum Andina. Porcelana con 10 años de garantía. Inodoro largo, bidet y lavatorio.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Grifería</strong> — FV Epuyén diseño. Terminaciones en negro mate, brushed brass, rose gold o cromo.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Pisos</strong> — Porcelanato rectificado 1ra calidad. Símil cemento, granito o mármol a elección del cliente.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Carpinterías</strong> — Aluar A30 con DVH de alta prestación. Máximo aislamiento térmico y acústico.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Exterior</strong> — A elección: chapa prepintada, Siding Cedral símil madera o revestimiento símil piedra. Combinables.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Mobiliario</strong> — A medida según planos. MDF lacado, madera maciza o laminado. Herrajes premium.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Semi cubierto</strong> — Estructura + contrapiso + piso de alto tránsito cerámico o porcelanato exterior.</span></div>
+        <div class="term-item"><span class="term-item-icon">▸</span><span class="term-item-text"><strong>Revestimiento baño</strong> — Porcelanato rectificado a elección del cliente. Sin límite de diseño.</span></div>
+      </div>
+      <div class="term-cta">
+        <a href="https://wa.me/message/VIRHE5HNAFOGK1" target="_blank" class="btn-primary" style="display:inline-block;text-decoration:none">Cotizar Superior</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ETAPAS CONSTRUCTIVAS -->
+<section class="etapas-section" id="etapas">
+  <div class="reveal">
+    <div class="section-tag">Cómo construimos</div>
+    <div class="section-title">Etapas constructivas</div>
+    <div class="section-line"></div>
+  </div>
+  <div class="etapas-grid reveal">
+    <div class="etapa-card">
+      <span class="etapa-num">01</span>
+      <div class="etapa-title">Instalaciones</div>
+      <p class="etapa-desc">Aguas y sanitarias según normativa provincial. Electricidad bajo norma AEA/IRAM. Gas según ENARGAS NAG-200. Todo calculado y documentado.</p>
+      <span class="etapa-tag">Base del proyecto</span>
+    </div>
+    <div class="etapa-card">
+      <span class="etapa-num">02</span>
+      <div class="etapa-title">Estructura y obra gruesa</div>
+      <p class="etapa-desc">Fundaciones, estructura de hormigón armado y cerramientos. Losa cerámica con viguetas pretensadas y membrana non crack en techos.</p>
+      <span class="etapa-tag">Steel Frame · H°A°</span>
+    </div>
+    <div class="etapa-card">
+      <span class="etapa-num">03</span>
+      <div class="etapa-title">Revestimientos</div>
+      <p class="etapa-desc">Pisos, paredes y cielorrasos según terminación elegida. Exterior con Tarquini, chapa prepintada, Siding o símil piedra a elección.</p>
+      <span class="etapa-tag">Interior · Exterior</span>
+    </div>
+    <div class="etapa-card">
+      <span class="etapa-num">04</span>
+      <div class="etapa-title">Aberturas y carpinterías</div>
+      <p class="etapa-desc">Ventanas Aluar con vidrio simple o DVH según nivel. Puertas interiores de placa y puerta principal metálica con 5 puntos de seguridad.</p>
+      <span class="etapa-tag">Aluar · Seguridad</span>
+    </div>
+    <div class="etapa-card">
+      <span class="etapa-num">05</span>
+      <div class="etapa-title">Sanitarios y grifería</div>
+      <p class="etapa-desc">Colocación de artefactos Roca o Ferrum y griferías FV según nivel Standard o Superior. Cocina con mesada de granito y bacha Johnson.</p>
+      <span class="etapa-tag">Roca · Ferrum · FV</span>
+    </div>
+    <div class="etapa-card">
+      <span class="etapa-num">06</span>
+      <div class="etapa-title">Mobiliario y entrega</div>
+      <p class="etapa-desc">Instalación de bajo mesada, placares y carpintería de madera. Revisión final, documentación técnica y entrega de llaves en el plazo acordado.</p>
+      <span class="etapa-tag">Llave en mano</span>
+    </div>
+  </div>
+</section>
+
 <!-- NÚMEROS -->
 <section class="numeros">
   <div class="numeros-grid reveal">
@@ -581,12 +726,12 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0 48px}
           <a href="mailto:sketch.build.ar@gmail.com">sketch.build.ar@gmail.com</a>
         </div>
         <div class="contact-item">
-          <span class="contact-item-label">Córdoba</span>
-          <span>Fernando Fader 3971</span>
-        </div>
-        <div class="contact-item">
           <span class="contact-item-label">CABA</span>
           <span>Av. Libertador 8142</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-item-label">Córdoba</span>
+          <span>Fernando Fader 3971</span>
         </div>
         <div class="contact-item">
           <span class="contact-item-label">WhatsApp</span>
@@ -623,7 +768,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0 48px}
   <div class="footer-main">
     <div class="footer-brand">
       <span class="footer-logo">Sketch<span>Build</span></span>
-      <p>Empresa de arquitectura, diseño y construcción con sedes en Córdoba y Buenos Aires. Transformamos ideas en espacios reales.</p>
+      <p>Empresa de arquitectura, diseño y construcción con sedes en Buenos Aires y Córdoba. Transformamos ideas en espacios reales.</p>
     </div>
     <div class="footer-col">
       <h4>Servicios</h4>
@@ -638,6 +783,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0 48px}
       <ul>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#terminaciones">Terminaciones</a></li>
         <li><a href="#proyectos">Portfolio</a></li>
       </ul>
     </div>
@@ -651,7 +797,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0 48px}
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Sketch Build · Córdoba & CABA, Argentina</p>
+    <p>© 2025 Sketch Build · CABA & Córdoba, Argentina</p>
     <p style="color:var(--border-light)">Arquitectura · Diseño · Construcción</p>
   </div>
 </footer>
@@ -735,5 +881,16 @@ const counterObserver=new IntersectionObserver(entries=>{
 const numerosSection=document.querySelector('.numeros')
 if(numerosSection)counterObserver.observe(numerosSection)
 </script>
+
+<!-- WHATSAPP FLOTANTE -->
+<a class="wa-float" href="https://wa.me/message/VIRHE5HNAFOGK1" target="_blank" rel="noopener">
+  <span class="wa-float-label">Cotizá tu proyecto</span>
+  <div class="wa-float-btn">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </div>
+</a>
+
 </body>
 </html>
